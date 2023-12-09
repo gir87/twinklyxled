@@ -3,6 +3,6 @@ A python script that checks the content of an online txt file by polling each 5 
 For example, if the txt contains 'water' it will set to preset 'Water' after 5 seconds, if it contains 'fire' it will set to preset 'Fire' etc.
 Very simple!
 
-## modules used
-xled
-xled_plus
+## Install the following modules first
+* xled
+* xled_plus
