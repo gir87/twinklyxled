@@ -4,8 +4,8 @@ from polling2 import poll
 import xled
 from xled_plus.samples.sample_setup import *
 
-# Connect to Twinkly via xled
-control_high = xled.HighControlInterface('192.168.x.x', '98:cd:ac:62:xx:xx') # insert IP and HW id of the Twinkly device here
+# Connect to Twinkly
+control_high = xled.HighControlInterface('192.168.xx.xx', '98:cd:ac:xx:xx:xx') # Insert IP and HW id of the Twinkly device here
 print("Twinkly leds are on? " + str(control_high.is_on()))
 
 # Store the last preset found
@@ -15,6 +15,9 @@ last_preset = None
 preset_classes = {
     'fire': Fire,
     'water': Water,
+    'gold': Gold,
+    'sparklestars' : SparkleStars,
+    'looplightspectrum' : LooplightSpectrum,
     # Add more presets as needed
 }
 
@@ -36,7 +39,7 @@ polling_interval = 5  # in seconds
 # Connect to URL
 def fetch_content(url):
     response = requests.get(url)
-    return response.text if response.status_code == 200 else print("not 200")
+    return response.text if response.status_code == 200 else print("Error: not 200")
 
 # Check content of the url
 def check_content(url):
